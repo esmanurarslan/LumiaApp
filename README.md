@@ -2,7 +2,7 @@
 https://github.com/user-attachments/assets/4c8b1ec3-f84d-4066-b26d-02e8961e95d9
 # Lumia - Film Uygulaması
 
-<img width="1024" height="1024" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
+<img width="500" height="500" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
 <br>
 
 Bu proje, **Techcareer.net** tarafından düzenlenen iOS Developer Bootcamp'i kapsamında **Kasım Adalan** [cite: 4] [cite_start]eğitmenliğinde geliştirilen bir bitirme projesidir. Uygulama, SwiftUI kullanılarak modern bir film satış platformu olarak tasarlanmıştır.
@@ -25,8 +25,8 @@ Uygulamanın temel ekranlarına ait görseller aşağıdadır.
 
 | Ana Sayfa                                       | Film Detay                                        | Sepet Ekranı                                    |
 | ----------------------------------------------- | ------------------------------------------------- | ----------------------------------------------- |
-| <img width="559" height="1062" alt="Home" src="https://github.com/user-attachments/assets/777ea136-ee2f-4192-b2aa-c63090d991c9" />| <img width="559" height="1062" alt="MovieDetail" src="https://github.com/user-attachments/assets/1b471e71-af13-4e9b-b496-34514aaedb51" />
- | <img width="559" height="1062" alt="Cart" src="https://github.com/user-attachments/assets/dd97bd23-92ad-40c7-a34e-60515d253e29" /> |
+| <img width="559" height="1062" alt="Home" src="https://github.com/user-attachments/assets/777ea136-ee2f-4192-b2aa-c63090d991c9" />| <img width="559" height="1062" alt="MovieDetail" src="https://github.com/user-attachments/assets/1b471e71-af13-4e9b-b496-34514aaedb51" /> | <img width="559" height="1062" alt="Cart" src="https://github.com/user-attachments/assets/dd97bd23-92ad-40c7-a34e-60515d253e29" /> |
+
 
 ### Video Demo
 
@@ -60,7 +60,7 @@ Bu projenin gelişim sürecindeki değerli eğitimleri ve rehberliği için **Ka
 # Lumia - Movie App
 
 
-<img width="1024" height="1024" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
+<img width="500" height="500" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
 <br>
 
 This is the final project developed for the iOS Developer Bootcamp organized by **Techcareer.net**, under the instruction of **Kasım Adalan** .The application is designed as a modern movie sales platform using SwiftUI.
