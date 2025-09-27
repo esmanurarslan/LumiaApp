@@ -5,7 +5,7 @@ https://github.com/user-attachments/assets/4c8b1ec3-f84d-4066-b26d-02e8961e95d9
 <img width="500" height="500" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
 <br>
 
-Bu proje, **Techcareer.net** tarafından düzenlenen iOS Developer Bootcamp'i kapsamında **Kasım Adalan** [cite: 4] [cite_start]eğitmenliğinde geliştirilen bir bitirme projesidir. Uygulama, SwiftUI kullanılarak modern bir film satış platformu olarak tasarlanmıştır.
+Bu proje, **Techcareer.net** tarafından düzenlenen iOS Developer Bootcamp'i kapsamında **Kasım Adalan** eğitmenliğinde geliştirilen bir bitirme projesidir. Uygulama, SwiftUI kullanılarak modern bir film satış platformu olarak tasarlanmıştır.
 
 ## ✨ Özellikler
 
