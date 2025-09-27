@@ -5,7 +5,6 @@
 //  Created by Esma Nur Arslan on 17.09.2025.
 //
 
-
 import Foundation
 import SwiftUI
 
@@ -17,8 +16,10 @@ final class CartViewModel: ObservableObject {
     @Published var showSuccessToast: Bool = false
     @Published var toastMessage: String = ""
 
-    // Aynı anda sadece bir sepet güncelleme işlemi yapıldığından emin olmak için
     private var isUpdatingCart = false
+    
+    // --- DEĞİŞİKLİK 1: İlk yüklemenin yapılıp yapılmadığını takip eden bayrak eklendi ---
+    private var hasPerformedInitialLoad = false
 
     private let service: MovieService
 
@@ -29,27 +30,35 @@ final class CartViewModel: ObservableObject {
     var totalPrice: Int {
         items.reduce(0) { $0 + ($1.price * $1.orderAmount) }
     }
-
-
-    func loadCart() async {
+    
+    // --- DEĞİŞİKLİK 2: Fonksiyon, gereksiz yüklemeleri önleyecek şekilde güncellendi ---
+    /// Sepeti yükler. `force` parametresi true ise, daha önce yüklenmiş olsa bile yeniden yüklemeyi zorlar.
+    func loadCart(force: Bool = false) async {
+        // Eğer zorunlu bir yenileme değilse VE ilk yükleme zaten yapıldıysa, fonksiyonu çalıştırma.
+        // Bu, sekmeler arası geçişteki "yanıp sönme" sorununu çözer.
+        guard force || !hasPerformedInitialLoad else { return }
+        
         if isLoading { return }
+        
         isLoading = true
-        errorMessage = nil
+        defer { isLoading = false } // Bu satır, fonksiyon hata verse bile isLoading'in false yapılmasını garantiler.
+        
         do {
             self.items = try await service.fetchCart()
+            // Başarılı bir yüklemeden sonra bayrağı `true` yapıyoruz.
+            self.hasPerformedInitialLoad = true
         } catch {
             self.items = []
+            // İsteğe bağlı: Gerçek bir ağ hatası varsa kullanıcıya göstermek için errorMessage ayarlanabilir.
+            // self.errorMessage = "Sepet yüklenemedi: \(error.localizedDescription)"
         }
-        isLoading = false
     }
 
-
+    /// Sepetteki bir ürünün miktarını günceller. Tüm işlemlerin merkezidir.
     private func updateCart(for movie: Movies, amountChange: Int) async {
-
         guard !isUpdatingCart else { return }
         
         isUpdatingCart = true
-
         defer { isUpdatingCart = false }
 
         let existingItems = self.items.filter { $0.name == movie.name }
@@ -57,28 +66,27 @@ final class CartViewModel: ObservableObject {
         let newTotalAmount = currentAmount + amountChange
         
         do {
-      
+            // Önce sunucudaki bu filme ait tüm eski kayıtları temizle
             for item in existingItems {
-              
-                if item.cartId > 0 {
+                if item.cartId > 0 { // Geçici olarak eklenmiş (cartId=0) satırları silmeye çalışma
                     try await service.deleteMovieFromCart(cartId: item.cartId, userName: item.userName)
                 }
             }
             
+            // Yeni adet 0'dan büyükse, yeni toplam adetle tek bir kayıt olarak ekle
             if newTotalAmount > 0 {
                 try await service.addMovieToCart(movie: movie, orderAmount: newTotalAmount)
             }
             
-         
+            // Son olarak, lokal veriyi sunucuyla senkronize etmek için sepeti yeniden çek
             self.items = try await service.fetchCart()
             
         } catch {
-            
             self.errorMessage = "Sepet güncellenemedi: \(error.localizedDescription)"
+            // Hata durumunda tutarlılığı sağlamak için sepeti yeniden yükle
             self.items = (try? await service.fetchCart()) ?? items
         }
     }
-
 
     func addToCart(movie: Movies, orderAmount: Int) async {
         await updateCart(for: movie, amountChange: orderAmount)
@@ -125,10 +133,9 @@ final class CartViewModel: ObservableObject {
     }
 }
 
-
 extension Movies {
     init(from cartItem: MovieCart) {
-        self.init(id: 0, 
+        self.init(id: 0,
                   name: cartItem.name,
                   image: cartItem.image,
                   price: cartItem.price,

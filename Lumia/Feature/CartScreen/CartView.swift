@@ -12,13 +12,12 @@ struct CartView: View {
     
     var body: some View {
         Group {
-            if cartVM.isLoading {
+            if cartVM.isLoading && cartVM.items.isEmpty { // Sadece ilk yüklemede tam ekran loading göster
                 ProgressView("Cart is loading...")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.theme.backgroundAlt)
             } else {
                 if cartVM.items.isEmpty {
-          
                     VStack(spacing: 10) {
                         Image(systemName: "cart")
                             .font(.system(size: 56))
@@ -52,45 +51,39 @@ struct CartView: View {
                                 }
                                 Spacer()
                                         
-                                        HStack(spacing: 12) {
-                                            Button {
-                                                Task { await cartVM.decreaseQuantity(for: item) }
-                                            } label: {
-                                                Image(systemName: "minus.circle.fill")
-                                                    .font(.title2)
-                                            }
-                                            
-                                            Text("\(item.orderAmount)")
-                                                .font(.headline)
-                                                .frame(minWidth: 20)
-                                            
-                                            /*Button {
-                                                Task { await cartVM.increaseQuantity(for: item) }
-                                            } label: {
-                                                Image(systemName: "plus.circle.fill")
-                                                    .font(.title2)
-                                            } bu işlevi problemsiz ekleyemedim şimdilk kaldırdım*/
-                                        }
-                                        .foregroundColor(Color.theme.logo)
-                                        
-
+                                HStack(spacing: 12) {
+                                    Button {
+                                        Task { await cartVM.decreaseQuantity(for: item) }
+                                    } label: {
+                                        Image(systemName: "minus.circle.fill")
+                                            .font(.title2)
                                     }
-                                    .padding(.vertical, 4)
-                                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                        Button(role: .destructive) {
-                                            Task { await cartVM.delete(cartItem: item) }
-                                        } label: {
-                                            Label("Delete", systemImage: "trash")
-                                        }
-                                    }
-                                    .listRowBackground(Color.clear)
+                                    
+                                    Text("\(item.orderAmount)")
+                                        .font(.headline)
+                                        .frame(minWidth: 20)
+                                    
+                                   
                                 }
+                                .foregroundColor(Color.theme.logo)
+                            }
+                            .padding(.vertical, 4)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                Button(role: .destructive) {
+                                    Task { await cartVM.delete(cartItem: item) }
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                            }
+                            .listRowBackground(Color.clear)
+                        }
                     }
                     .listStyle(.insetGrouped)
                     .scrollContentBackground(.hidden)
                     .background(Color.theme.backgroundAlt)
+                    // --- DEĞİŞİKLİK 2: refreshable, zorunlu yenileme yapacak şekilde güncellendi ---
                     .refreshable {
-                        await cartVM.loadCart()
+                        await cartVM.loadCart(force: true)
                     }
                     .safeAreaInset(edge: .bottom) {
                         if !cartVM.items.isEmpty {
@@ -112,14 +105,13 @@ struct CartView: View {
             }
         }
         .withLogoTitle()
-        
         .task {
+            // Bu satırda değişiklik yok, ViewModel'deki yeni mantık sayesinde doğru çalışacak.
             await cartVM.loadCart()
         }
     }
 }
 
-// Basit hata bandı 
 private struct ErrorBanner: View {
     let message: String
     var body: some View {
