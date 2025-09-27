@@ -81,7 +81,7 @@ struct CartView: View {
                     .listStyle(.insetGrouped)
                     .scrollContentBackground(.hidden)
                     .background(Color.theme.backgroundAlt)
-                    // --- DEĞİŞİKLİK 2: refreshable, zorunlu yenileme yapacak şekilde güncellendi ---
+                  
                     .refreshable {
                         await cartVM.loadCart(force: true)
                     }
@@ -106,7 +106,7 @@ struct CartView: View {
         }
         .withLogoTitle()
         .task {
-            // Bu satırda değişiklik yok, ViewModel'deki yeni mantık sayesinde doğru çalışacak.
+        
             await cartVM.loadCart()
         }
     }
