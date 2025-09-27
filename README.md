@@ -43,15 +43,15 @@ Proje, modern iOS geliştirme pratikleri göz önünde bulundurularak geliştiri
 
 ## 🌐 API Referansı
 
-[cite_start]Proje, hazır bir web servisi üzerinden veri çekmektedir[cite: 7, 8]. Kullanılan endpoint'ler şunlardır:
+Proje, hazır bir web servisi üzerinden veri çekmektedir. Kullanılan endpoint'ler şunlardır:
 
 | İşlev                  | Endpoint                                                 | Metot |
 | ---------------------- | -------------------------------------------------------- | ----- |
-| Tüm Filmleri Getir     | [cite_start]`http://kasimadalan.pe.hu/movies/getAllMovies.php` [cite: 99]       | GET   |
-| Sepete Film Ekle       | [cite_start]`http://kasimadalan.pe.hu/movies/insertMovie.php` [cite: 101]      | POST  |
-| Sepetteki Filmleri Getir | [cite_start]`http://kasimadalan.pe.hu/movies/getMovieCart.php` [cite: 100]    | POST  |
-| Sepetten Film Sil      | [cite_start]`http://kasimadalan.pe.hu/movies/deleteMovie.php` [cite: 102]       | POST  |
-| Film Resimleri         | [cite_start]`http://kasimadalan.pe.hu/movies/images/{resim_adi}.png` [cite: 104] | GET   |
+| Tüm Filmleri Getir     | `http://kasimadalan.pe.hu/movies/getAllMovies.php`      | GET   |
+| Sepete Film Ekle       | `http://kasimadalan.pe.hu/movies/insertMovie.php`   | POST  |
+| Sepetteki Filmleri Getir | `http://kasimadalan.pe.hu/movies/getMovieCart.php`  | POST  |
+| Sepetten Film Sil      | `http://kasimadalan.pe.hu/movies/deleteMovie.php`      | POST  |
+| Film Resimleri         | `http://kasimadalan.pe.hu/movies/images/{resim_adi}.png`  | GET   |
 
 ## 🙏 Teşekkür
 
