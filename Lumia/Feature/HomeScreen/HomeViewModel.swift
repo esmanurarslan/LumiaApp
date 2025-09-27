@@ -18,6 +18,10 @@ class HomeViewModel: ObservableObject{
     @Published var movieRows: [MovieRow] = []
     @Published var isLoading: Bool = false
     @Published var allMovies: [Movies] = []
+    
+    // Arama metni
+    @Published var searchText: String = ""
+    
     private let movieService = MovieService()
     
     init() {
@@ -97,4 +101,31 @@ class HomeViewModel: ObservableObject{
         self.movieRows = rows
     }
     
+    // MARK: - Arama Mantığı
+    
+    private var trimmedQuery: String {
+        searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    // Arama sonuçları (film adı veya yönetmen adına göre, büyük/küçük harf duyarsız)
+    var filteredMovies: [Movies] {
+        let query = trimmedQuery
+        guard !query.isEmpty else { return [] }
+        return allMovies.filter {
+            $0.name.localizedCaseInsensitiveContains(query) ||
+            $0.director.localizedCaseInsensitiveContains(query)
+        }
+    }
+    
+    // Arama önerileri (yönetmenler ve film adları)
+    var directorSuggestions: [String] {
+        let set = Set(allMovies.map { $0.director })
+        return Array(set).sorted()
+    }
+    
+    var titleSuggestions: [String] {
+        let set = Set(allMovies.map { $0.name })
+        return Array(set).sorted()
+    }
 }
+
