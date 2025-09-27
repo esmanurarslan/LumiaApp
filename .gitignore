@@ -1,0 +1,23 @@
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcuserdatad/
+*.xcscheme
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+
+# Swift Package Manager
+.build/
+Packages/
+*.resolve
+
+# İşletim Sistemi Dosyaları
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+
+# Göz ardı edilecek özel dosyalar
+.windsurf 
