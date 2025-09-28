@@ -2,8 +2,8 @@
 
 <img width="500" height="500" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
 <br>
-## Video Demo
 
+## Video Demo
 
 https://github.com/user-attachments/assets/d8c9ab92-1ad2-44b2-b61b-d8c63c89271f
 
@@ -37,13 +37,8 @@ Uygulamanın temel ekranlarına ait görseller aşağıdadır.
  ----------------------------------------------- | ------------------------------------------------- |
  |<img width="559" height="1062" alt="cartpage" src="https://github.com/user-attachments/assets/13ac13b6-627d-4382-8018-737c3f262353" />| <img width="559" height="1062" alt="detailpage" src="https://github.com/user-attachments/assets/3dfb593e-be3e-4d53-9f36-cfe88363f5eb" />
 |
-### Video Demo
 
 ## 🛠️ Kullanılan Teknolojiler ve Mimarî
-
-
-https://github.com/user-attachments/assets/9ee67fc0-4f71-4c91-abcb-761d4d09dc7c
-
 
 Proje, modern iOS geliştirme pratikleri göz önünde bulundurularak geliştirilmiştir.
 
