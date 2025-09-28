@@ -2,9 +2,12 @@
 
 <img width="500" height="500" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
 <br>
-### Video Demo
+## Video Demo
 
-Uploading ScreenRecording_09-27-2025 17-22-02_1.MP4…
+
+https://github.com/user-attachments/assets/d8c9ab92-1ad2-44b2-b61b-d8c63c89271f
+
+
 
 Bu proje, **Techcareer.net** tarafından düzenlenen iOS Developer Bootcamp'i kapsamında **Kasım Adalan** eğitmenliğinde geliştirilen bir bitirme projesidir. Uygulama, SwiftUI kullanılarak modern bir film satış platformu olarak tasarlanmıştır.
 
@@ -67,8 +70,6 @@ Proje, hazır bir web servisi üzerinden veri çekmektedir. Kullanılan endpoint
 Bu projenin gelişim sürecindeki değerli eğitimleri ve rehberliği için **Kasım Adalan**'a ve bu fırsatı sunan **Techcareer.net**'e teşekkürler.
 
 # Lumia - Movie App
-
-
 <img width="500" height="500" alt="Lumia-logo" src="https://github.com/user-attachments/assets/2329415e-bd97-4a70-89e2-89bca83b5b3e" />
 <br>
 
