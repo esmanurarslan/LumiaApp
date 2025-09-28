@@ -17,21 +17,29 @@ Proje, bir film satış uygulamasının temel işlevlerini içermektedir
 -  **Sepete Ekleme:** Belirlenen adette filmin sepete eklenmesi
 -  **Sepet Yönetimi:** Sepete eklenen tüm filmlerin bir arada görüntülenmesi
 -  **Sepetten Silme:** İstenmeyen filmlerin sepetten tek tek kaldırılması
+-  **Arama Özelliği:** Kullanıcılar filmlerin adı ve yönetmen bilgisine göre arayarak istedikleri filme daha hızlı ulaşabilmektedir
 
 
 ## 📱 Ekran Görüntüleri
 
 Uygulamanın temel ekranlarına ait görseller aşağıdadır.
 
-| Ana Sayfa                                       | Film Detay                                        | Sepet Ekranı                                    |
-| ----------------------------------------------- | ------------------------------------------------- | ----------------------------------------------- |
-| <img width="559" height="1062" alt="Home" src="https://github.com/user-attachments/assets/777ea136-ee2f-4192-b2aa-c63090d991c9" />| <img width="559" height="1062" alt="MovieDetail" src="https://github.com/user-attachments/assets/1b471e71-af13-4e9b-b496-34514aaedb51" /> | <img width="559" height="1062" alt="Cart" src="https://github.com/user-attachments/assets/dd97bd23-92ad-40c7-a34e-60515d253e29" /> |
+| Ana Sayfa                                       | Arama Ekranı                                      |
+| ----------------------------------------------- | ------------------------------------------------- | 
+|<img width="559" height="1062" alt="homepage" src="https://github.com/user-attachments/assets/6d1a140f-7d64-4778-86eb-79e9536dbb43" />| <img width="559" height="1062" alt="searchpage" src="https://github.com/user-attachments/assets/396a99aa-a9e0-4f30-b7bb-04a1f9d66cab" />
+ 
 
-
+ Sepet Ekranı                                    | Film Detay                                        |
+ ----------------------------------------------- | ------------------------------------------------- |
+ |<img width="559" height="1062" alt="cartpage" src="https://github.com/user-attachments/assets/13ac13b6-627d-4382-8018-737c3f262353" />| <img width="559" height="1062" alt="detailpage" src="https://github.com/user-attachments/assets/3dfb593e-be3e-4d53-9f36-cfe88363f5eb" />
+|
 ### Video Demo
 
-Uploading ScreenRecording_09-27-2025 17-22-02_1.MP4…
 ## 🛠️ Kullanılan Teknolojiler ve Mimarî
+
+
+https://github.com/user-attachments/assets/9ee67fc0-4f71-4c91-abcb-761d4d09dc7c
+
 
 Proje, modern iOS geliştirme pratikleri göz önünde bulundurularak geliştirilmiştir.
 
@@ -74,15 +82,21 @@ The project includes the core functionalities of a movie sales application:
 - **Quantity Selection:** Allows users to increase or decrease the number of items on the detail page.
 - **Cart Management:** Displays all the movies currently in the cart.
 - **Remove from Cart:** Allows for the removal of movies from the cart.
+- **Search Feature:** Users can reach the movie they want faster by searching according to the name of the movies and director's information
 
 
 ## 📱 Screenshots
 
 Below are the screenshots from the main screens of the application.
 
-| Homepage                                | Movie Detail                            | Shopping Cart                           |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| <img width="559" height="1062" alt="Home" src="https://github.com/user-attachments/assets/777ea136-ee2f-4192-b2aa-c63090d991c9" />| <img width="559" height="1062" alt="MovieDetail" src="https://github.com/user-attachments/assets/1b471e71-af13-4e9b-b496-34514aaedb51" /> | <img width="559" height="1062" alt="Cart" src="https://github.com/user-attachments/assets/dd97bd23-92ad-40c7-a34e-60515d253e29" /> |
+| Homepage                                | Search View                           | 
+| --------------------------------------- | --------------------------------------- | 
+|<img width="559" height="1062" alt="homepage" src="https://github.com/user-attachments/assets/6d1a140f-7d64-4778-86eb-79e9536dbb43" />| <img width="559" height="1062" alt="searchpage" src="https://github.com/user-attachments/assets/396a99aa-a9e0-4f30-b7bb-04a1f9d66cab" />
+ 
+
+| Cart Page                                       | Movie Detail                                       |
+| ----------------------------------------------- | ------------------------------------------------- |
+|<img width="559" height="1062" alt="cartpage" src="https://github.com/user-attachments/assets/13ac13b6-627d-4382-8018-737c3f262353" />| <img width="559" height="1062" alt="detailpage" src="https://github.com/user-attachments/assets/3dfb593e-be3e-4d53-9f36-cfe88363f5eb" />
 
 ### Video Demo
 
